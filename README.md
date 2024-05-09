@@ -9,6 +9,13 @@ docker run --rm --name bitcoin-server -d -p 18443:18443 -p 18444:18444 -it ruima
 
 # Bitcoin-cli 操作
 
+## 前置
+
+进入容器内部
+
+docker exec -it bitcoin-server /bin/bash
+
+
 ## 1. 创建一个名为demo的钱包
 
 bitcoin-wallet -regtest -wallet=demo create
