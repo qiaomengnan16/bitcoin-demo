@@ -16,3 +16,12 @@ console.log({
     publicKey: keyPair.publicKey.toString('hex'),
     publicKeyHash: (bitcoin.crypto.hash160(keyPair.publicKey)).toString('hex')
 })
+
+/**
+ * {
+ *   address: 'muR9pCyG1SUeTsvntGYAq92vvsnuJddnJp',
+ *   privateKey: 'cQbY4cdW28X9oX1NqFRedAj7V7ZvSmU6VbrK2XsEYBHtkSsXvuqE',
+ *   publicKey: '02d38d85812e96aa83842d0c0234d6664b8401fbaeaeded93edd384e0ab560df02',
+ *   publicKeyHash: '9878e1ab024335095ebd104bd6827ca1d3d0e71d'
+ * }
+ */

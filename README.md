@@ -4,8 +4,17 @@ docker run --rm --name bitcoin-server -d -p 18443:18443 -p 18444:18444 -it ruima
 -regtest=1 \
 -rpcbind=0.0.0.0 \
 -rpcallowip=172.17.0.0/16 \
+-fallbackfee=0.01 \
 -rpcuser=111111 \
 -rpcpassword=111111
+
+## 镜像源地址
+
+https://hub.docker.com/r/ruimarinho/bitcoin-core
+
+## 镜像源码地址
+
+https://github.com/ruimarinho/docker-bitcoin-core
 
 # Bitcoin-cli 操作
 
@@ -48,6 +57,12 @@ bitcoin-cli -regtest  -rpcuser=111111 -rpcpassword=111111 -generate 110
 ## 4. 查看余额
 
 bitcoin-cli -regtest -rpcuser=111111 -rpcpassword=111111 listaddressgroupings
+
+## 5. 发送btc
+
+bitcoin-cli -regtest -rpcuser=111111 -rpcpassword=111111 sendtoaddress muR9pCyG1SUeTsvntGYAq92vvsnuJddnJp 20
+
+
 
 
 
