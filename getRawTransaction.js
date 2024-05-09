@@ -5,10 +5,13 @@ const txid = 'c482ef7d75daf02bc398a11eac72ee93f4ff553457e409e73245dad34fd1b5ee'
 // 获取交易内容
 client.getRawTransaction(txid)
     // 解码交易内容
-    .then(res => client.decodeRawTransaction(res))
+    .then(res => {
+        console.log(res)
+        return client.decodeRawTransaction(res)
+    })
     // 输出交易内容
     .then(tx => {
-        // console.log(tx)
+         console.log(tx)
         // console.log(tx.vin)
-        console.log(tx.vout)
+        //console.log(tx.vout)
     })

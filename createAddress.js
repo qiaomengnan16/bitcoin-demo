@@ -25,3 +25,13 @@ console.log({
  *   publicKeyHash: '9878e1ab024335095ebd104bd6827ca1d3d0e71d'
  * }
  */
+
+
+/**
+ * {
+ *   address: 'n4HBXgJdmthLnM7wm2XWBHVLMWRHDL4mod',
+ *   privateKey: 'cW1nHGDZ64zfK5JcAzWZUWJcJAmBUkahHhNtCWdHcP1wssCChj3o',
+ *   publicKey: '020455eb4d2fe81d79f138907fcf44eb064f2952eb3920df8d26ed2a2325427bdc',
+ *   publicKeyHash: 'f9b01e14b7567e9ecd488cf4e605b22c62aa0b44'
+ * }
+ */
