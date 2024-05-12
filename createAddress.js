@@ -17,6 +17,8 @@ const p2wpkhAddress = bitcoin.payments.p2wpkh({
 }).address
 
 
+
+
 console.log({
     p2pkhAddress,
     p2wpkhAddress,
