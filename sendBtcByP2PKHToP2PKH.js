@@ -13,6 +13,7 @@ const keyPair = ECPair.fromWIF(
 );
 
 // p2pkh地址
+// bitcoin.opcodes.OP_DUP
 const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey, network: REGTEST });
 
 

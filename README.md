@@ -1,6 +1,6 @@
 # 跑起docker本地regtest环境
 
-docker run --rm --name bitcoin-server -d -p 18443:18443 -p 18444:18444 -it ruimarinho/bitcoin-core \
+docker run --name bitcoin-server -d -p 18443:18443 -p 18444:18444 -it ruimarinho/bitcoin-core \
 -regtest=1 \
 -rpcbind=0.0.0.0 \
 -rpcallowip=172.17.0.0/16 \
@@ -31,21 +31,13 @@ bitcoin-wallet -regtest -wallet=demo create
 
 ## 2. 加载demo钱包
 
-bitcoin-cli -regtest -rpcuser=111111 -rpcpassword=111111 loadwallet demo
-
-### 2.1 这一步加载如果出错，说demo不存在请执行下面操作
-
-mkdir -p /home/bitcoin/.bitcoin/regtest/wallets/demo/
-
-cp /root/.bitcoin/regtest/wallets/demo/wallet.dat /home/bitcoin/.bitcoin/regtest/wallets/demo/wallet.dat
-
-cd  /home/bitcoin/.bitcoin/regtest/wallets/demo/
-
-chmod 777 wallet.dat
-
-cd ../
-
-chmod 777 -R demo/
+mkdir -p /home/bitcoin/.bitcoin/regtest/wallets/demo/ \
+    && \
+    cp /root/.bitcoin/regtest/wallets/demo/wallet.dat /home/bitcoin/.bitcoin/regtest/wallets/demo/wallet.dat \
+    && \
+    cd  /home/bitcoin/.bitcoin/regtest/wallets/ \
+    && \
+    chmod 777 -R demo/
 
 bitcoin-cli -regtest -rpcuser=111111 -rpcpassword=111111 loadwallet demo
 
@@ -61,7 +53,6 @@ bitcoin-cli -regtest -rpcuser=111111 -rpcpassword=111111 listaddressgroupings
 ## 5. 发送btc
 
 bitcoin-cli -regtest -rpcuser=111111 -rpcpassword=111111 sendtoaddress muR9pCyG1SUeTsvntGYAq92vvsnuJddnJp 20
-
 
 ## 6. 根据txid获取交易信息
 bitcoin-cli -regtest -rpcuser=111111 -rpcpassword=111111 getrawtransaction f2ed3255a5819b5fc97eb8fd26ea3da7f87c4f77da2c4357fb99571551ae9fdf
